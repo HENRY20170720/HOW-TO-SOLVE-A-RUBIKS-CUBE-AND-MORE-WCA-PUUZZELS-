@@ -1113,6 +1113,28 @@
       .face-grid.g3 { grid-template-columns: repeat(3, 26px); grid-template-rows: repeat(3, 26px); }
       .face-grid.g5 { grid-template-columns: repeat(5, 16px); grid-template-rows: repeat(5, 16px); }
       .cube-diagram-row { gap: 0.75rem; }
+      .puzzle-bar-inner {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0.25rem 0.5rem;
+      }
+      .puzzle-bar-inner::-webkit-scrollbar { display: none; }
+      .puzzle-btn { padding: 0.7rem 0.9rem; font-size: 0.82rem; }
+      .puzzle-bar::after {
+        content: '→';
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255,255,255,0.6);
+        font-size: 1.1rem;
+        pointer-events: none;
+        animation: nudge 1.5s ease-in-out infinite;
+      }
+      .puzzle-bar { position: relative; }
+      @keyframes nudge { 0%,100% { right: 4px; } 50% { right: 10px; } }
     }
   </style>
 </head>
